@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'com.hansoleee'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
+//    implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.36', ext: 'pom'
+//    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.36'
+
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.11'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.11'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+}
+
+test {
+    useJUnitPlatform()
+}
